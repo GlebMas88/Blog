@@ -1,4 +1,4 @@
 json.posts @posts do |json, post|
   json.(post, :id, :title, :content, :upvotes)
-  json.comments post.comments, :id, :body
+  json.comments post.comments, :id, :body, :upvotes
 end

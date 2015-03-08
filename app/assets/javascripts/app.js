@@ -7,7 +7,12 @@ angular.module("blog", ["ui.router", "templates"])
 				.state("home", {
 					url: "/home",
 					templateUrl: "home/_home.html",
-					controller: "MainCtrl as main"
+					controller: "MainCtrl as main",
+          resolve: {
+            postPromise: ['postService', function (postService) {
+              return postService.getAll();
+            }]
+          }
 				})
 				.state ("posts", {
 					url: "/posts/:id",
