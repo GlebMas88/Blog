@@ -28,6 +28,15 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Set cookie about tokens to angular
+gem "angular_rails_csrf"
+
+gem "devise", "~> 3.4.0"
+
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

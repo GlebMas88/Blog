@@ -1,12 +1,30 @@
 .post-title, .comment-body{
-		font-size: 20px;
-		margin-left: 10px;
+	font-size: 20px;
+	margin-left: 10px;
 }
 
 .glyphicon-thumbs-up {
-		cursor: pointer;
+	cursor: pointer;
 }
 
 form {
-		margin-top: 30px;
+	margin-top: 30px;
+}
+
+.ta-toolbar {
+    background-color: #F0F0F0;
+    padding: 10px 10px 5px;
+    margin-left: 0px;
+    border: 1px solid #EEE;
+}
+
+.ta-editor, .white-box {
+    padding: 10px;
+    background-color: #FFF;
+    border: 1px solid #EEE;
+    border-radius: 0;
+}
+
+.ta-toolbar .btn-group {
+    margin-bottom: 5px;
 }

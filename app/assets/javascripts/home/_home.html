@@ -6,10 +6,8 @@
     <span class="glyphicon glyphicon-thumbs-up" ng-click="main.incrementUpvotes(post)"></span>
     {{post.upvotes}}
     <span class="post-title">
-        <a ng-show="post.link" href="{{post.link}}">{{post.link}}</a>
-        <span ng-hide="post.link">{{post.title}}</span>
+        <a href="#/posts/{{post.id}}">{{post.title}}</a>
     </span>
-    <span><a href="#/posts/{{$index}}">Show</a></span>
 </div>
 
 <form ng-submit="main.addPost()">
@@ -18,7 +16,7 @@
         <input type="text" class="form-control" placeholder="Title" ng-model="main.title">
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Link" ng-model="main.link">
+        <div text-angular ng-model="main.content"></div>
     </div>
     <button class="btn btn-primary" type="submit">Add Post</button>
 </form>

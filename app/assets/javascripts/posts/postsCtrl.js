@@ -1,22 +1,23 @@
 angular.module('blog')
 	.controller("PostsCtrl", [
-		"$stateParams",
+		"post",
 		"postService",
-		function ($stateParams, postService) {
+		function (post, postService) {
 			var vm = this;
-			vm.post = postService.postsList[$stateParams.id];
+			vm.post = post;
 			
 			vm.addComment = function () {
 				if (vm.body === "") { return; }
-				vm.post.comments.push ({
+				postService.addComment(post.id, {
 					body: vm.body,
-					author: "User",
-					upvotes: 0
-				});
+					author: "User"
+				}).success(function (comment) {
+				  vm.post.comments.push(comment);
+				})
 				vm.body = "";
 			};
 			
 			vm.incrementUpvotes = function (comment) {
-				comment.upvotes += 1;
+				postService.upvoteComment(post, comment);
 			}
 	}]);

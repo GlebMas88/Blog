@@ -7,20 +7,15 @@ angular.module("blog")
 		
 			vm.addPost = function () {
 				if (!vm.title || vm.title === "") { return; }
-				vm.postsList.push({
+				postService.createPost({
 					title: vm.title,
-					link: vm.link,
-					upvotes: 0,
-					comments: [
-						{ author: "Joe", body: "Cool Post", upvotes: 0 },
-						{ author: "Bob", body: "Great idea but everything is wrong", upvotes: 0 }
-					]
+					content: vm.content
 				});
 				vm.title = "";
-				vm.link = "";
+				vm.content = "";
 			};
 		
 			vm.incrementUpvotes = function (post) {
-				post.upvotes += 1;
+				postService.upvotePost(post);
 			}
 	}]);
