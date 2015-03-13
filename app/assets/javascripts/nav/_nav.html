@@ -1,0 +1,9 @@
+<div class="collapse navbar-collapse pull-right" ng-controller="NavCtrl as navCtrl">
+    <ul class="nav navbar-nav">
+        <li><a href="#/home">Home</a></li>
+        <li ng-hide="navCtrl.signedIn()"><a href="#/login">Log In</a></li>
+        <li ng-hide="navCtrl.signedIn()"><a href="#/register">Register</a></li>
+        <li ng-show="navCtrl.signedIn()"><a href="#/">{{ navCtrl.user.username }}</a></li>
+        <li ng-show="navCtrl.signedIn()"><a href="#/home" ng-click="navCtrl.logout()">Log Out</a></li>
+    </ul>
+</div>
